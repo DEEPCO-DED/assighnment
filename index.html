@@ -4,85 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SeaMonkey</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding-top: 70px;
-     
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
     }
 
 
-    .main {
-      background-image: url('Rectangle 3.gif');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.479);
+
+    .whatsapp {
+      position: fixed;
+      bottom: 60px;
+      right: 10px;
+      z-index: 2000;
     }
 
-    .container3 {
+    .lastfooter ul,
+    .footrest ul {
       display: flex;
-      justify-content: center;
-      gap: 10px;
-      background-image: url('pexels-marek-piwnicki-3907296-5878114.jpg');
       flex-wrap: wrap;
-      padding: 20px;
-    }
-
-    .button {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 20px;
-    }
-
-    .formandimage {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      background-image: url('MOUNTDOWN.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      width: 100%;
-      padding: 40px;
-      flex-wrap: wrap;
-    }
-
-    .formandimage img {
-      height: auto;
-      max-width: 100%;
-      border-radius: 20px;
-    }
-
-    .lastfooter ul {
-      list-style: none;
-      display: flex;
       justify-content: center;
       gap: 20px;
-      color: black;
-      font-weight: bold;
-      flex-wrap: wrap;
-      padding: 20px;
+      list-style: none;
+      padding: 0;
     }
 
     .lastcontainer {
       background-image: url('mountup.jpg');
-      height: 500px;
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      width: 100%;
-      position: relative;
+      height: 500px;
       text-align: center;
       padding-top: 150px;
     }
@@ -94,231 +55,233 @@
       text-align: center;
     }
 
-    .footrest ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+    .navbar-brand img {
+      height: 2rem;
     }
-    .whatsapp{
-      position: fixed;
-      top:500px;
-      right: 10px;
-      z-index: 2000;
-     
+
+    .form-label {
+      font-weight: 600;
     }
-   
+
+    /* Gallery images with hover effect */
+    .gallery-img {
+      width: 100%;
+      height: 250px;             /* Same height for all */
+      object-fit: cover;         /* Crop nicely */
+      border-radius: 12px;       /* Rounded corners */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    }
 
     @media (max-width: 768px) {
-      .hero-section {
-        height: 70vh;
-        padding: 20px;
-        text-align: center;
+      .lastcontainer {
+        padding-top: 100px;
+        height: auto;
       }
-
-      .formandimage {
-        flex-direction: column;
-        padding: 20px;
-      }
-
-      .container3 {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .lastfooter ul,
-      .footrest ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-    .navbar{
-      background-color: rgba(0, 0, 0, 0.527);
     }
   </style>
 </head>
+
 <body>
 
-<!-- Navbar -->
+  <!-- Responsive Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+    <div class="container-fluid mx-auto">
+      <a class="navbar-brand" href="#"><img src="logo.svg" style="height: 100px;" alt="Logo" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<nav class="navbar navbar-expand-lg mx-auto" style="background-color: blue  transparent !important; position: absolute; top: 0; width: 100%; z-index: 1000;">
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3 mx-auto">
+         <form class="d-flex" role="search">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search...">
+    <button class="btn btn-warning" type="submit">Search</button>
+  </div>
+</form>
+          <li class="nav-item "><a class="nav-link" style="color: blue; font-weight: bold;" href="#">EXPEDITIONS</a></li>
+          <li class="nav-item"><a class="nav-link" style="color: blue; font-weight: bold;" href="#">GALLERY</a></li>
+          <li class="nav-item"><a class="nav-link" style="color: blue; font-weight: bold;" href="#">FAQ</a></li>
+        </ul>
+        <button class="btn btn-outline-light " style="background-color: rgb(255, 153, 0);">CONTACT</button>
+      </div>
+    </div>
+  </nav>
 
-  <div class="container-fluid ">
-    <a class="navbar-brand ms-auto "  href="#"><img src="logo.svg" alt="" height="40"> SeaMonkey</a>
-    <button class="navbar-toggler "  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-      <span class="navbar-toggler-icon " ></span>
-    </button>
-    <!-- form -->
-     <form class="d-flex" role="search" >
-        <input class="form-control me-2" type="search" placeholder="Search">
-        <button class="btn btn-outline-success ms-auto" type="submit">Search</button>
-      </form>
-     <!-- FORM -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="#"><H4>EXPEDITION</H4></a></li>
-        
-        <li class="nav-item"><a class="nav-link active" href="#"><H4>GALLERY</H4></a></li>
-                <li class="nav-item"><a class="nav-link active" href="#"><H4>FAQ</H4></a></li>
-        
-          </ul>
-       
-      
+  <!-- Carousel -->
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    
+    <div class="carousel-item active">
+      <img src="Rectangle 3.gif" class="d-block w-100" alt="Carousel Image">
+
+      <!-- Overlay text + button -->
+      <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+        <h2 class="text-white fw-bold fade-in">Explore <br> Untamed Wilderness</h2>
+        <a href="#gallery" class="btn btn-primary btn-lg mt-3 fade-in delay-1">Discover More ⮞</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Extra Styling -->
+
+
+  <!-- About Section -->
+  <div class="container p-5">
+    <div class="text-center">
+      <h1>About</h1>
+      <h5>Welcome to SeaMonkey Expeditions,<br> Jordan's Premier Wildlife Experience!</h5>
+      <p>
+        At SeaMonkey Expeditions, we are dedicated to showcasing the remarkable wildlife of Jordan. Join us on an unforgettable journey to witness the Arabian Oryx, stunning birds, graceful water buffalos, and thriving marine life.
+      </p>
+    </div>
+    <div class="text-center mt-4">
+      <img src="g&m.png" class="img-fluid" alt="About Image">
+    </div>
+    <div class="whatsapp">
+      <a href="https://web.whatsapp.com/"><img src="whtsp.png" style="height: 30px; border-radius: 50%;" alt="WhatsApp"></a>
+      <a href="index.html"><img src="TOP.png" style="height: 30px; border-radius: 50%;" alt="Top"></a>
     </div>
   </div>
-</nav>
 
-
-
-
-<!-- Hero Section -->
-<div class="main text-center">
-  <h1 class="display-3 fw-bold">Explore</h1>
-  <p class="lead">Untamed Wilderness<br>Now operating in Jordan</p>
-  <a href="#" class="btn btn-info btn-lg mt-3">Know More</a>
-</div>
-
-<!-- About Section -->
-<div class="container mt-5">
-  <div class="text-center">
-    <h1>About</h1>
-    <h5>Welcome to SeaMonkey Expeditions,<br> Jordan's Premier Wildlife Experience!</h5>
-    <p>At SeaMonkey Expeditions, we are dedicated to showcasing the remarkable wildlife of Jordan. Join us on an unforgettable journey to witness the Arabian Oryx, stunning birds, graceful water buffalos, and thriving marine life.</p>
+  <!-- Explore Buttons -->
+  <div class="text-center mt-5">
+    <h1 class="display-3 fw-bold">Explore</h1>
+    <p class="lead">Untamed Wilderness<br>Now operating in Jordan</p>
   </div>
-  <div class="text-center mt-4">
-    <img src="g&m.png" class="img-fluid" alt="">
-  </div>
-  <div class="whatsapp">
-    <a href="https://web.whatsapp.com/"><img src="create a WhatsApp ic.png" style="height: 90PX; border-radius: 50%;" alt=""></a>
-    <a href="justanother.html"><img src="TOP.png" style="height: 90px; border-radius: 50%;" alt=""></a>
+  <div class="d-flex flex-wrap justify-content-center gap-3 p-3">
+    <button class="btn btn-outline-dark">All Trips</button>
+    <button class="btn btn-outline-dark"><img src="camping.png" alt=""></button>
+    <button class="btn btn-outline-dark"><img src="hiking.png" alt=""></button>
+    <button class="btn btn-outline-dark"><img src="seasafari.png" alt=""></button>
+    <button class="btn btn-outline-dark"><img src="vehoicle.png" alt=""></button>
   </div>
 
-</div>
-
-<!-- Explore Buttons -->
-<div class="text-center mt-5">
-  <h1 class="display-3 fw-bold">Explore</h1>
-  <p class="lead">Untamed Wilderness<br>Now operating in Jordan</p>
-</div>
-<div class="button">
-  <button class="btn btn-outline-dark">All Trips</button>
-  <button class="btn btn-outline-dark"><img src="camping.png" alt=""></button>
-  <button class="btn btn-outline-dark"><img src="hiking.png" alt=""></button>
-  <button class="btn btn-outline-dark"><img src="seasafari.png" alt=""></button>
-  <button class="btn btn-outline-dark"><img src="vehoicle.png" alt=""></button>
-</div>
-
-<!-- Cards Section -->
-<div class="container mt-5">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="card h-100">
-        <img src="card-img-1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">WILD SAFARI</h5>
-          <p class="card-text">Water buffalo & bird watching trek</p>
+  <!-- Cards Section -->
+  <div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="card-img-1.png" class="card-img-top" alt="Safari">
+          <div class="card-body">
+            <h5 class="card-title">WILD SAFARI</h5>
+            <p class="card-text">Water buffalo & bird watching trek</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="card-img-2.png" class="card-img-top" alt="Ocean Dive">
+          <div class="card-body">
+            <h5 class="card-title">OCEAN DIVE</h5>
+            <p class="card-text">Scuba dive or snorkel the Red Sea</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="card-img-3.png" class="card-img-top" alt="Mountain Trekking">
+          <div class="card-body">
+            <h5 class="card-title">MOUNTAIN TREKKING</h5>
+            <p class="card-text">Hike in the wild</p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="card-img-2.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">OCEAN DIVE</h5>
-          <p class="card-text">Scuba dive or snorkel the red sea</p>
-        </div>
+  </div>
+
+  <!-- View All Trips -->
+  <div class="text-center mt-5">
+    <button class="btn btn-primary btn-lg">View All Trips ⮞</button>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="container-fluid mt-5">
+    <section class="faq-section text-center p-3">
+      <h2>FAQ</h2>
+      <p class="subtitle">Frequently Asked Questions</p>
+      <div class="faq-item">
+        <h3>Is spotting wildlife guaranteed?</h3>
+        <hr />
+      </div>
+      <div class="faq-item">
+        <h3>What wildlife are we expected to see in Jordan?</h3>
+        <p>
+          Jordan is home to vast wildlife. From migratory birds to Arabian oryx, red foxes, Nubian ibex, and the rich marine life of the Red Sea. Rare sightings include striped hyenas, sand cats, Eurasian badgers, and whale sharks.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Gallery Section -->
+  <h1 class="text-center mt-5">Gallery</h1>
+
+  <div class="container text-center mt-4">
+    <div class="row g-3">
+      <div class="col-md-6 col-12">
+        <img src="elephant.png" class="gallery-img" alt="Elephant in forest">
+      </div>
+      <div class="col-md-6 col-12">
+        <img src="Trecking.png" class="gallery-img" alt="Group trekking in mountains">
+      </div>
+      <div class="col-md-6 col-12">
+        <img src="Tent.png" class="gallery-img" alt="Camping tent in nature">
+      </div>
+      <div class="col-md-6 col-12">
+        <img src="Ocean.png" class="gallery-img" alt="Ocean adventure">
       </div>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="card-img-3.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">MOUNTAIN TREKKING</h5>
-          <p class="card-text">Hike in the wild</p>
-        </div>
+  </div>
+
+  <div class="text-center mt-3">
+    <button class="btn btn-primary btn-lg">View All Gallery ⮞</button>
+  </div>
+
+  <!-- Form & Image -->
+  <div class="container-fluid mt-5 p-5" style="background-image: url('MOUNTDOWN.jpg'); background-size: cover;">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-6 mb-4">
+        <img src="snow.png" class="img-fluid rounded" alt="Snow Adventure">
+      </div>
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <label for="email1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email1" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="email2" class="form-label">Confirm Email</label>
+            <input type="email" class="form-control" id="email2" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea class="form-control" id="message" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
       </div>
     </div>
   </div>
-</div>
 
-<!-- View All Trips Button -->
-<div class="text-center mt-5">
-  <button type="button" class="btn btn-primary btn-lg">View All Trips ⮞</button>
-</div>
-
-
-<div class="container-fluid mt-5 " style="display: flex; justify-content: center;">
-<section class="faq-section">
-  <h2 style="text-align: center;">FAQ</h2>
-  <p class="subtitle" style="text-align: center;">Frequently Asked Questions</p>
-
-  <div class="faq-item">
-    <h3 style="text-align: center;">Is spotting wildlife guaranteed?</h3>
-    <hr>
-  </div>
-
-  <div class="faq-item">
-    <h3 style="text-align: center;">What wildlife are we expected to see in Jordan?</h3>
-    <p style="text-align: center;">
-      Jordan is home to vast wildlife. The country is a very important migratory route for many bird species, the red sea is home to over 500 species of fish. Apart from the sea, Jordanian wilderness is a scenic adventure, yet to be witnessed by many. The chances of spotting Arabian oryx, water buffalo, red foxes, rock hyrax, desert foxes & Nubian ibex. There are many times few people have recorded in Jordan are extremely rare to spot. Just when many say this and shun nature such as striped hyenas, sand cats, Eurasian badgers and whale sharks. With some great luck you could see one of the very few people that were able to spot them!
-    </p>
-  </div>
-</section>
-</div>
-
-
-<!-- Gallery Section -->
-<h1 class="text-center mt-5">Gallery</h1>
-<div class="container3">
-  <img src="elephant.png" class="img-fluid" alt="">
-  <div>
-    <img src="Trecking.png" class="img-fluid mb-2" alt="">
-    <img src="Tent.png" class="img-fluid" alt="">
-  </div>
-</div>
-<!-- View All Gallery Button -->
-<div class="text-center mt-3">
-  <button type="button" class="btn btn-primary btn-lg">View All Gallery ⮞</button>
-</div>
-
-<!-- Form & Image Section -->
-<div class="formandimage mt-5">
-  <div class="imageh">
-    <img src="snow.png" class="img-fluid" alt="Snow Adventure">
-  </div>
-  <div class="formm p-3">
-    <form>
-      <div class="mb-3">
-        <label for="email1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email1" placeholder="name@example.com">
-      </div>
-      <div class="mb-3">
-        <label for="email2" class="form-label">Confirm Email</label>
-        <input type="email" class="form-control" id="email2" placeholder="name@example.com">
-      </div>
-      <div class="mb-3">
-        <label for="message" class="form-label">Your Message</label>
-        <textarea class="form-control" id="message" rows="3"></textarea>
-      </div>
-      <button type="submit" class="btn btn-success">Submit</button>
-    </form>
-  </div>
-</div>
-
-<!-- Logo & Footer Links -->
-<div class="lastcontainer">
-  <img src="logo.svg" class="img-fluid" style="max-width: 150px;" alt="SeaMonkey Logo">
-  <div class="lastfooter">
-    <ul>
-      <li>EXPEDITIONS</li>
-      <li>GALLERY</li>
-      <li>FAQ</li>
-      <li>PRIVACY POLICIES</li>
-    </ul>
-    <div class="ul">
+  <!-- Footer -->
+  <div class="lastcontainer text-white">
+    <img src="logo.svg" class="img-fluid mb-3" style="max-width: 150px;" alt="SeaMonkey Logo">
+    <div class="lastfooter">
+      <ul>
+        <li>EXPEDITIONS</li>
+        <li>GALLERY</li>
+        <li>FAQ</li>
+        <li>PRIVACY POLICIES</li>
+      </ul>
       <ul>
         <li><i class="fa-brands fa-instagram"></i></li>
         <li><i class="fa-brands fa-facebook"></i></li>
@@ -327,20 +290,15 @@
       </ul>
     </div>
   </div>
-</div>
 
-<!-- Bottom Footer -->
-<div class="footrest">
-  <ul>
-    <li>Copyright © 2023 SeaMonkey</li>
-    <li>Terms & Conditions</li>
-  </ul>
-</div>
+  <div class="footrest">
+    <ul>
+      <li>© 2023 SeaMonkey</li>
+      <li>Terms & Conditions</li>
+    </ul>
+  </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
